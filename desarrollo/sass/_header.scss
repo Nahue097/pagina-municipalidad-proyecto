@@ -1,0 +1,264 @@
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
+
+
+.site-header{
+    position: fixed;
+    background-color: #fff;
+   
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 78px;
+    z-index: 10;
+
+    box-shadow: 0 0 5px rgba(0, 0,0, 0.1);
+    
+    padding: 13px 0;
+
+    .site-logo{
+     display: block;
+     max-width: 250px ;
+     width: 100%;
+    
+    
+    }
+   
+   
+    .ctn-icono-busqueda{
+       display: flex;
+       justify-content: end;
+        
+        .icono-lupa{
+           
+            color: $color-violeta;
+            font-size: 1.6rem;
+            cursor: pointer;
+            
+           
+           
+                       
+        }
+    } 
+    .menu-principal{
+
+        ul{
+    
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+    
+            li{
+               
+                
+                margin: 0px;
+                position: relative;
+               
+               
+                
+    
+                a{
+                    font-size: 12px;
+                    font-weight: 400;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: $color-violeta;
+                    padding: 5px;
+                    font-weight: 500;
+                    
+                }
+               
+                //submenu-------------------------------------------------------------
+                
+                ul{
+                    width: 200px;
+                    display: flex;
+                    flex-direction: column;
+                    background-color: #fff;
+                    position: absolute;
+                    top: 30px;
+                    left: -20px;
+                    visibility: hidden;
+                    opacity: 0;   
+                    box-shadow: 0px 0px 5px 0px rgba(0, 0,0, 0.5);
+                    z-index: 20;
+                    transition: all 300ms ease;
+                    li{
+                        border-bottom: solid 1px #d455db;
+                        margin-left: 0;
+                        padding-left: 0;
+                        a{
+                            display: block;
+                            padding: 2px;
+                            text-align: center;
+                            font-size: 12px;
+    
+                        }
+                        a:hover {
+                            background: $color-violeta;
+                            color: #fff;
+                            
+    
+                        }
+                    }
+    
+                    
+                   
+                }
+                li:last-child{
+                    border-bottom: none;
+                    
+                }
+    
+              
+               
+            }
+    
+    
+            li:hover{
+                
+              
+                ul{
+                    visibility: visible;
+                    opacity: 1;
+                    z-index: 20;
+    
+                    
+                   
+                   
+     
+                    li{
+                        border-bottom: solid 1px #d455db;
+                        margin: 0;
+                        
+                    } 
+                    li:last-child{
+                        border-bottom: none;
+                        box-shadow: none;
+                      
+                    }
+                    
+                }
+            } 
+              /*  li:last-child{
+                margin-right: 10px;
+              }
+                */
+    
+          
+        }
+    }
+
+}
+
+
+
+
+
+
+
+#turismo{
+    
+   
+    a{
+        color: #fff;
+        background-color: $color-violeta;
+        border-radius: 3px;
+      
+    }
+}
+
+
+
+//barra de busqueda------------------------------------------------------------------
+
+#ctn-barra-busqueda{
+    position: fixed;
+    top: -10px;
+    width: 100%;
+    background: #fff;
+    padding: 15px;
+    z-index: 9;
+    transition: all 600ms ease;
+    input{
+        display: block;
+        width: 1200px;
+        margin: auto;
+        padding: 10px;
+        font-size: 15px;
+        outline: 0;
+    }
+}
+
+
+#caja-recomendaciones{
+    position: fixed;
+    top: 160px;
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 1200px;
+    background: #fff;
+    z-index: 13;
+    padding-left:0;
+    display: none;
+    li{
+       list-style: none;
+        a{
+            display: block;
+            width: 1200px;
+            color: $color-violeta;
+            padding: 12px 15px;
+            text-decoration: none;
+            /* 
+             i{
+                margin-right: 10px;
+             } */
+        }
+        a:hover{
+            background: #f3f3f3;
+        }
+    }
+}
+
+
+#sombra-busqueda{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    background: rgba(0,0,0, 0.5);
+    display: none;
+    z-index: 8;
+}
+
+
+
+
+
+//RESPONSIVE--------------------------------------------------------------
+
+
+
+@media (max-width:$corte1) {
+  
+    .site-header{
+        align-items: center center;
+       
+        padding: 0;
+       
+        .logo_responcive{
+           color: $color-violeta; 
+           font-size: 3rem;
+           padding-left: 10px;
+           padding-bottom: 10px;
+           text-decoration: none;
+           font-family: Verdana, Geneva, Tahoma, sans-serif;
+           font-weight: 800;
+         }
+        
+    }
+    
+       
+}
+   

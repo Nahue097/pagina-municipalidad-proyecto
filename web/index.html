@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/fancybox.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+
+
+    <script src="https://kit.fontawesome.com/712575d4a5.js"
+    crossorigin="anonymous"></script>
+
+</head>
+   <body>
+         <!-- menu responsive -->
+    <nav class="menu-responsive">
+
+        <ul class="menuR">
+            <li class="container-submenu desplegar-submenu menu-item">
+                <a class="menu__link submenu-btn" href="#">Institucional</a>
+                <ul class="submenu">
+                    <li><a  class="menu__link" href="#">Autoridades</a></li>
+                    <li><a  class="menu__link" href="#">Sueldos</a></li>
+                    <li><a  class="menu__link" href="#">Concuros Municipales</a></li>
+                    
+                </ul>
+               
+               
+            </li>
+            <li class="container-submenu desplegar-submenu menu-item">
+                <a href="#" class="menu__link submenu-btn" >Informacion en linea</a>
+            <ul class="submenu">
+                    <li><a class="menu__link" href="#">Nuevas boletas</a></li>
+                    <li><a class="menu__link" href="#">Seguridad</a></li>
+                    <li><a class="menu__link" href="#">Clave Fiscal</a></li>
+                    <li><a class="menu__link" href="#">Instruccions DDJJ</a></li>
+                    <li><a class="menu__link" href="#">Padron de Proveedores</a></li>
+                    <li><a class="menu__link" href="#">Demanda Habitacional</a></li>
+                </ul>
+                 
+                
+            </li>
+            <li class="container-submenu desplegar-submenu menu-item">
+                <a href="#"  class="menu__link submenu-btn" >Muni en mano</a>
+                <ul class="submenu">
+                    <li><a class="menu__link" href="#">Declaracion Jurada</a></li>
+                    <li><a class="menu__link" href="#">Imprecion de recibos</a></li>
+                    <li><a class="menu__link" href="#">Imprecion de recibos <br> semestral, anual</a></li>
+                    <li><a class="menu__link" href="#">Linea de contacto</a></li>
+                    <li><a class="menu__link" href="#">Ad. Tarifas alojamientos</a></li>
+                </ul>
+                 
+            </li>
+            <li id="licitaciones" class="container-submenu">
+                <a class="menu__link submenu-btn" href="#">Licitaciones</a>
+               
+            </li>
+            <li class="container-submenu">
+                <a class="menu__link submenu-btn" href="#">Turismo</a>
+            </li>
+        </ul>
+    </nav>
+
+        <!--barra de navegacion con menu hamburguesa-->
+        <header class="site-header">
+
+            <div class="row justify-content-around align-items-center">
+
+
+                <div class="col-0 col-md-2">
+                    <div class="d-none d-md-block ">
+                    
+                        <a href="index.html" class="site-logo" >
+                            <img src="./images/logosma1.gif" alt="logo" class="img-fluid" >
+                        </a>
+
+ 
+                    </div> 
+                </div>
+                <div class="col-3 d-block d-md-none ">
+                    <div >
+                        <a href="index.html" class="logo_responcive">
+                           Sma
+                        </a>
+                    </div>
+                </div>
+
+
+            
+                 
+                <div class="col-4 col-md-1">
+                    <div class="ctn-icono-busqueda" id="ctn-icono-buscador">
+                        <div class="empuja-lupa"></div>
+                        <i class="fas fa-search icon icono-lupa" id="icono-busqueda"></i>
+                    </div>
+               </div>
+               
+                
+               
+
+                <div class="col-7 d-none d-md-block">
+
+                    <nav class="menu-principal">
+
+                        <ul>
+                            
+                            <li>
+                                <a href="#">Institucional</a>
+                                <ul>
+                                    <li><a href="#">Autoridades</a></li>
+                                    <li><a href="#">Sueldos</a></li>
+                                    <li><a href="#">Concuros Municipales</a></li>
+                                  
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Info. en linea</a>
+                                <ul>
+                                    <li><a href="#">Nuevas boletas</a></li>
+                                    <li><a href="#">Seguridad</a></li>
+                                    <li><a href="#">Clave Fiscal</a></li>
+                                    <li><a href="#">Instruccions DDJJ</a></li>
+                                    <li><a href="#">Padron de Proveedores</a></li>
+                                    <li><a href="#">Demanda Habitacional</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Muni en mano</a>
+                                <ul>
+                                    <li><a href="#">Declaracion Jurada</a></li>
+                                    <li><a href="#">Imprecion de recibos</a></li>
+                                    <li><a href="#">Imprecion de recibos <br> semestral, anual</a></li>
+                                    <li><a href="#">Linea de contacto</a></li>
+                                    <li><a href="#">Ad. tarifas alojamientos</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Licitaciones</a>
+                            </li>
+                            <li id="turismo">
+                                <a  href="#">turismo</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+
+               
+
+                <div class="col-2 d-block d-md-none">
+                    <button class="hamburger hamburger--vortex" type="button" id="header_icon">
+                        <span class="hamburger-box">
+                          <span class="hamburger-inner"></span>
+                        </span>
+                      </button>
+                </div>
+
+                
+
+                
+
+
+            </div>
+
+        </header>
+
+
+        <div id="ctn-barra-busqueda">
+            <input type="search" name="buscador" placeholder="¿Que deseas buscar?" id="inputBuscador">
+        </div>
+
+
+        <ul id="caja-recomendaciones">
+            <li><a href="#"> <i  class="fas fa-search icon"></i> Sueldos</a></li>
+            <li><a href="#"> <i  class="fas fa-search icon"></i> vivienda</a></li>
+            <li><a href="#"> <i  class="fas fa-search icon"></i> creditos</a></li>
+            <li><a href="#"> <i  class="fas fa-search icon"></i> sorteos</a></li>
+            <li><a href="#"> <i  class="fas fa-search icon"></i> cuentos años tiene sma</a></li>
+            <li><a href="#"> <i  class="fas fa-search icon"></i> turismo</a></li>
+        </ul>
+        
+
+        <div id="sombra-busqueda"></div>
+
+
+
+      <!--Contenido principal con swiper-->
+        <main class="main">
+          
+            <div class="contenedor-img">
+                <div class="swiper fotos-top">
+
+                    <div class="swiper-wrapper ctn-imagenes">
+    
+                    <div id="otoño-sma" class="swiper-slide swiper-lazy ratio" data-background="./images/imgfondo.jpg" style="--bs-aspect-ratio: 27%;"> </div>  
+                    <div id="verano-sma" class="swiper-slide swiper-lazy ratio" data-background="./images/sma-verano.jpg" style="--bs-aspect-ratio: 27%;"> </div>
+                    <div id="chapelco" class="swiper-slide swiper-lazy ratio" data-background="./images/chapelco.jpg" style="--bs-aspect-ratio: 27%;"> </div>  
+                     
+        
+                    </div>
+        
+                 </div>
+            </div>
+            
+
+            <section class="contenedor-tarjeta">
+            
+                <div class="container-fluid tarjetass">
+                    <h3>Declaración Jurada de Comercio: vencimiento 30 de abril. <br>
+                        SR./A CONTRIBUYENTE</h3>
+                    <p>RECUERDE QUE LA NO PRESENTACIÓN EN TIEMPO DE LA <b>DECLARACIÓN JURADA</b> ANUAL LO HARA PASIBLE DE <b>IMPORTANTES MULTAS</b>, SIN PERJUICIO DE LA <b>CATEGORIZACIÓN DE OFICIO QUE REALIZARA LA MUNICIPALIDAD DE SAN MARTIN DE LOS ANDES</b>. (art. 59 ssgts. Codigo Tributario y 48 Orza. 9445/12)</p>
+                    
+                </div>
+                    
+                
+            </section>
+
+            <div class="container-fluid bureau-img">
+
+                <div class="col-12 col-md-12 caja-img">
+
+                    
+                 <img src="/images/bureau-img.jpg" alt="">
+                    
+
+                </div>
+
+            </div>
+
+            <section class="municipalidad" >
+                <div class="ctn-img-muni"></div>
+                <div class="container-fluid texto-muni">
+                    <h2>Muni en mano</h2>
+                    <h3> </h3>
+                    <section class="nav-muni">
+                        <div class="navegador_muni"> 
+                            <a href="#"> Declaraciones juradas de comercio</a>
+                            <a href="#"> Clave fiscal</a>
+                            <a href="#"> Imprecion de recibos</a>
+                            <a href="#"> Tarifas hoteleros</a>
+                            <a href="#"> Linea de contacto</a>
+                        </div>
+                       
+                    </section>
+                    
+                </div>
+            </section>
+
+            <section class="informacionEnLinea" >
+                <div class="sombraInfo"></div>
+                <div class="container-fluid texto-InformacionEnLinea">
+                    <h2>Información en linea</h2>
+                    <h3> </h3>
+                    <section class="nav-informacionEnLinea">
+                        <div class="navegador_informacionEnLinea"> 
+                            <a href="#"> Sueldos municipales</a>
+                            <a href="#"> Cronograma de vencimientos</a>
+                            <a href="#"> Instrucciones DDJ</a>
+                          
+                            <a href="#"> Deudores morosos</a>
+                            <a href="#"> Registro demanda habitacional</a>
+                        </div>
+                       
+                    </section>
+                    
+                </div>
+            </section>
+
+
+
+           <!--  tarjetas------------------------------ -->
+
+
+
+            <article class="row justify-content-around">
+                <div class="col-12 col-md-4">
+                    
+                    <div class="normativa-municipal">
+                        <h3>Normativa municipal</h3>
+                        <a href="#">Normativa total</a>
+                        <a href="#">Normativa particular</a>
+                        <a href="#">Digesto</a>
+                        <a href="#">Especiales</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="rentas">
+                        <img src="" alt="">
+                        <h3>Rentas</h3>
+                        <h4>Las nuevas boletas traen <br> contancias de deuda y otras novedades</h4>
+                        <a href="#">Nuevas Boletas</a>
+                        <a href="#">Nuevos medios de pago</a>
+                        <a href="#">Cronograma de vencimientos</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="licitaciones-publicas">
+                        <div class="img-viviendas">
+                            <h3>licitación publica</h3>
+                             <a href="#">Venta de tierras</a>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </article>
+
+
+           
+
+
+           
+           
+         
+        </main>
+
+
+
+
+ 
+         <footer>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quam. Quo, officiis aut illum quisquam earum veritatis incidunt harum mollitia molestias repellat odio ipsam, vel, soluta dolores fugiat tempore? Labore. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus deleniti inventore repellendus sint similique nemo quibusdam iusto, omnis molestias accusamus molestiae quisquam aspernatur, temporibus impedit deserunt nam odio non fuga. lo+}
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus rerum sed ad dolorem ipsum distinctio omnis, mollitia odio sequi vero voluptatem, quia quaerat officiis nisi! Qui provident molestiae harum! Ipsa? Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda soluta deserunt, veniam quia eaque temporibus. Libero, sit quasi nulla aperiam quas iste alias fugiat ex neque ratione, consectetur, modi quibusdam?
+        </footer> 
+ 
+
+
+        <div class="sombra"></div>
+
+       <script src="./js/script.min.js"></script>
+
+    </body>
+
+
+</html>

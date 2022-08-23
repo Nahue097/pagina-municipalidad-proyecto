@@ -1,0 +1,833 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;500;800&family=Comforter&family=Poppins:wght@300;400;500;700&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  min-height: calc(100vh - 110px);
+  padding-top: 95px;
+  max-width: 100vw;
+  /*  margin-left: 20px;
+   margin-right: 20px; */
+}
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 0px 0px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+.hamburger:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #811271;
+}
+
+.hamburger-box {
+  width: 30px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 30px;
+  height: 4px;
+  background-color: #811271;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block;
+}
+.hamburger-inner::before {
+  top: -10px;
+}
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+/*
+ * Vortex
+ */
+.hamburger--vortex .hamburger-inner {
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+.hamburger--vortex .hamburger-inner::before, .hamburger--vortex .hamburger-inner::after {
+  transition-duration: 0s;
+  transition-delay: 0.1s;
+  transition-timing-function: linear;
+}
+.hamburger--vortex .hamburger-inner::before {
+  transition-property: top, opacity;
+}
+.hamburger--vortex .hamburger-inner::after {
+  transition-property: bottom, transform;
+}
+.hamburger--vortex.is-active .hamburger-inner {
+  transform: rotate(765deg);
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+.hamburger--vortex.is-active .hamburger-inner::before, .hamburger--vortex.is-active .hamburger-inner::after {
+  transition-delay: 0s;
+}
+.hamburger--vortex.is-active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+}
+.hamburger--vortex.is-active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(90deg);
+}
+
+.site-header {
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 78px;
+  z-index: 10;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 13px 0;
+}
+.site-header .site-logo {
+  display: block;
+  max-width: 250px;
+  width: 100%;
+}
+.site-header .ctn-icono-busqueda {
+  display: flex;
+  justify-content: end;
+}
+.site-header .ctn-icono-busqueda .icono-lupa {
+  color: #811271;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.site-header .menu-principal ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  /*  li:last-child{
+    margin-right: 10px;
+  }
+    */
+}
+.site-header .menu-principal ul li {
+  margin: 0px;
+  position: relative;
+}
+.site-header .menu-principal ul li a {
+  font-size: 12px;
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #811271;
+  padding: 5px;
+  font-weight: 500;
+}
+.site-header .menu-principal ul li ul {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  position: absolute;
+  top: 30px;
+  left: -20px;
+  visibility: hidden;
+  opacity: 0;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  transition: all 300ms ease;
+}
+.site-header .menu-principal ul li ul li {
+  border-bottom: solid 1px #d455db;
+  margin-left: 0;
+  padding-left: 0;
+}
+.site-header .menu-principal ul li ul li a {
+  display: block;
+  padding: 2px;
+  text-align: center;
+  font-size: 12px;
+}
+.site-header .menu-principal ul li ul li a:hover {
+  background: #811271;
+  color: #fff;
+}
+.site-header .menu-principal ul li li:last-child {
+  border-bottom: none;
+}
+.site-header .menu-principal ul li:hover ul {
+  visibility: visible;
+  opacity: 1;
+  z-index: 20;
+}
+.site-header .menu-principal ul li:hover ul li {
+  border-bottom: solid 1px #d455db;
+  margin: 0;
+}
+.site-header .menu-principal ul li:hover ul li:last-child {
+  border-bottom: none;
+  box-shadow: none;
+}
+
+#turismo a {
+  color: #fff;
+  background-color: #811271;
+  border-radius: 3px;
+}
+
+#ctn-barra-busqueda {
+  position: fixed;
+  top: -10px;
+  width: 100%;
+  background: #fff;
+  padding: 15px;
+  z-index: 9;
+  transition: all 600ms ease;
+}
+#ctn-barra-busqueda input {
+  display: block;
+  width: 1200px;
+  margin: auto;
+  padding: 10px;
+  font-size: 15px;
+  outline: 0;
+}
+
+#caja-recomendaciones {
+  position: fixed;
+  top: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  background: #fff;
+  z-index: 13;
+  padding-left: 0;
+  display: none;
+}
+#caja-recomendaciones li {
+  list-style: none;
+}
+#caja-recomendaciones li a {
+  display: block;
+  width: 1200px;
+  color: #811271;
+  padding: 12px 15px;
+  text-decoration: none;
+  /* 
+   i{
+      margin-right: 10px;
+   } */
+}
+#caja-recomendaciones li a:hover {
+  background: #f3f3f3;
+}
+
+#sombra-busqueda {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 8;
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    align-items: center center;
+    padding: 0;
+  }
+  .site-header .logo_responcive {
+    color: #811271;
+    font-size: 3rem;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 800;
+  }
+}
+.menu-responsive {
+  padding: 10px 0 0 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 65px;
+  overflow-y: hidden;
+  z-index: 5;
+  background-color: none;
+  transform: translateY(-100%);
+  transition: 0.5s linear all;
+}
+.menu-responsive .menuR {
+  background: #84407b;
+  width: 100%;
+  padding: 0;
+}
+.menu-responsive .menuR .container-submenu {
+  list-style: none;
+  padding-bottom: 6px;
+  padding-top: 6px;
+  border-bottom: solid 1px #fff;
+  text-align: center;
+}
+.menu-responsive .menuR .container-submenu .menu__link {
+  display: block;
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.menu-responsive .menuR .container-submenu .submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 0;
+  overflow: hidden;
+  transition: 0.3s linear all;
+}
+.menu-responsive .menuR .container-submenu .submenu .menu__link {
+  display: block;
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  background-color: #5c0850;
+  border: solid 3px #84407b;
+}
+.menu-responsive .menuR .container-submenu .activo {
+  height: auto;
+}
+.menu-responsive .menuR .container-submenu:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  background: #6b145e;
+  border: solid 5px #84407b;
+}
+
+#licitaciones {
+  border-bottom: none;
+}
+
+.sombra {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  display: none;
+}
+
+.con-navegacion .menu-responsive {
+  transform: translateX(0);
+}
+.con-navegacion .sombra {
+  display: block;
+}
+
+.fotos-top {
+  box-shadow: 0 0 8px #000;
+}
+.fotos-top .swiper-slide {
+  background-size: cover;
+  height: auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#otoño-sma {
+  background-position: 0px -30px;
+}
+
+#verano-sma {
+  background-size: cover;
+}
+
+.contenedor-img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.contenedor-tarjeta {
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-top: 50px;
+}
+.contenedor-tarjeta .tarjetass {
+  width: 100%;
+  height: 110px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.contenedor-tarjeta .tarjetass h3 {
+  font-size: 20px;
+  color: #811271;
+  margin-left: 10px;
+  font-weight: 700;
+}
+.contenedor-tarjeta .tarjetass p {
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+.bureau-img {
+  margin-bottom: 100px;
+  max-width: 1200px;
+}
+.bureau-img .caja-img {
+  padding-left: 0;
+  margin-left: 0;
+  box-shadow: 0 0 8px #000;
+}
+.bureau-img .caja-img img {
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.municipalidad {
+  position: relative;
+  width: 100%;
+  background-image: url(/images/municipalidad.jpg);
+  background-repeat: no-repeat;
+  height: 600px;
+  background-size: cover;
+  justify-content: space-between;
+  box-shadow: 0 0 8px #000;
+}
+.municipalidad .texto-muni {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 600px;
+}
+.municipalidad .texto-muni h2 {
+  color: #fff;
+  text-transform: uppercase;
+  margin: 20px 150px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+.municipalidad .texto-muni h3 {
+  margin-bottom: 180px;
+}
+.municipalidad .texto-muni .nav-muni {
+  background: #fff;
+  opacity: 0.6;
+  height: 70px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+.municipalidad .texto-muni .nav-muni .navegador_muni {
+  padding: 5px;
+  display: block;
+  margin: 0 auto;
+}
+.municipalidad .texto-muni .nav-muni .navegador_muni a {
+  opacity: 0.9;
+  margin: 50px;
+  color: #000;
+  margin: 8px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 0 5px;
+}
+.municipalidad .texto-muni .nav-muni .navegador_muni a:hover {
+  background-color: #181818;
+  color: #fff;
+}
+.municipalidad .ctn-img-muni {
+  z-index: 0;
+  content: "";
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  background: #000;
+  opacity: 0.4;
+}
+
+.informacionEnLinea {
+  position: relative;
+  width: 100%;
+  background-image: url(/images/infoEnLinea.jpg);
+  margin-top: 100px;
+  margin-bottom: 50px;
+  height: 600px;
+  background-size: cover;
+  justify-content: space-between;
+  box-shadow: 0 0 8px #000;
+}
+.informacionEnLinea .texto-InformacionEnLinea {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 600px;
+}
+.informacionEnLinea .texto-InformacionEnLinea h2 {
+  color: #fff;
+  text-transform: uppercase;
+  margin: 20px 200px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+.informacionEnLinea .texto-InformacionEnLinea h3 {
+  margin-bottom: 180px;
+}
+.informacionEnLinea .texto-InformacionEnLinea .nav-informacionEnLinea {
+  background: #fff;
+  opacity: 0.6;
+  height: 70px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+.informacionEnLinea .texto-InformacionEnLinea .nav-informacionEnLinea .navegador_informacionEnLinea {
+  margin: 0 auto;
+}
+.informacionEnLinea .texto-InformacionEnLinea .nav-informacionEnLinea .navegador_informacionEnLinea a {
+  opacity: 0.9;
+  color: #000;
+  margin: 8px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.informacionEnLinea .texto-InformacionEnLinea .nav-informacionEnLinea .navegador_informacionEnLinea a:hover {
+  background-color: #181818;
+  color: #fff;
+}
+.informacionEnLinea .sombraInfo {
+  z-index: 0;
+  content: "";
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  background: #000;
+  opacity: 0.4;
+}
+
+.normativa-municipal {
+  width: 100%;
+  height: 400px;
+  margin: 5px;
+  background-image: url(/images/normativa.jpg);
+  background-size: cover;
+  box-shadow: 0 0 8px #000;
+}
+.normativa-municipal h3 {
+  color: #d455db;
+  font-size: 1.4rem;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #181818;
+  margin: 20px;
+  margin-bottom: 40px;
+}
+.normativa-municipal a {
+  background-color: #fff;
+  opacity: 0.7;
+  color: #000;
+  display: block;
+  text-align: center;
+  font-size: 1.3rem;
+  text-decoration: none;
+  margin: 20px;
+}
+.normativa-municipal a:hover {
+  color: #fff;
+  background-color: #181818;
+}
+
+.rentas {
+  width: 100%;
+  height: 400px;
+  margin: 5px;
+  box-shadow: 0 0 8px #000;
+}
+.rentas h3 {
+  color: #811271;
+  font-size: 1.4rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.rentas h4 {
+  font-size: 1rem;
+  text-align: center;
+}
+.rentas a {
+  display: block;
+  text-align: center;
+  margin: 5px 10px;
+}
+
+.licitaciones-publicas {
+  width: 98%;
+  height: 400px;
+  margin: 5px;
+  box-shadow: 0 0 8px #000;
+}
+.licitaciones-publicas .img-viviendas {
+  padding: 10px;
+  background-image: url(/images/viviendas.jpg);
+  background-size: cover;
+  height: 400px;
+  width: 100%;
+  background-position-x: -80px;
+}
+.licitaciones-publicas h3 {
+  font-size: 1.4rem;
+  background: #181818;
+  text-align: center;
+  color: #d455db;
+  margin-bottom: 100px;
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+.licitaciones-publicas a {
+  background-color: #fff;
+  opacity: 0.7;
+  color: #000;
+  display: block;
+  text-align: center;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+.licitaciones-publicas a:hover {
+  color: #fff;
+  background-color: #181818;
+}
+
+@media (max-width: 720px) {
+  .main {
+    width: 100vw;
+  }
+  .main .contenedor-img {
+    margin-bottom: 20px;
+  }
+  .main .contenedor-img .ctn-imagenes {
+    height: 220px;
+  }
+  .main .logo-cortado {
+    padding-left: 10px;
+  }
+  .main .fotos-top {
+    width: 100%;
+    box-shadow: 0 0px 8px #000;
+  }
+  .main .fotos-top .swiper-slide {
+    background-size: cover;
+    border-radius: 0;
+    height: auto;
+    background-position: center center;
+  }
+  .main .tarjetass {
+    display: none;
+  }
+  .main .bureau-img {
+    display: none;
+  }
+  .main .bureau-img .caja-img img {
+    padding-left: 0;
+  }
+  .main .municipalidad {
+    position: relative;
+    width: 100%;
+    background-image: url(/images/municipalidad.jpg);
+    background-repeat: no-repeat;
+    height: 500px;
+    background-size: cover;
+    box-shadow: 0 0 8px #000;
+  }
+  .main .municipalidad .texto-muni {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 500px;
+  }
+  .main .municipalidad .texto-muni h2 {
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 20px;
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+  .main .municipalidad .texto-muni h3 {
+    display: none;
+  }
+  .main .municipalidad .texto-muni .nav-muni {
+    position: relative;
+    background: #fff;
+    opacity: 0.6;
+    height: 350px;
+    margin: 10px;
+    margin-top: 30px;
+    align-items: center;
+    flex-direction: column;
+  }
+  .main .municipalidad .texto-muni .nav-muni .navegador_muni {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .main .municipalidad .texto-muni .nav-muni .navegador_muni a {
+    opacity: 0.9;
+    color: #000;
+    margin: 15px 0;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 0 5px;
+    text-align: center;
+  }
+  .main .municipalidad .texto-muni .nav-muni .navegador_muni a:hover {
+    background-color: #181818;
+    color: #fff;
+  }
+  .main .municipalidad .ctn-img-muni {
+    z-index: 0;
+    content: "";
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    background: #000;
+    opacity: 0.4;
+  }
+  .main .informacionEnLinea {
+    position: relative;
+    width: 100%;
+    background-image: url(/images/infoEnLinea.jpg);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 500px;
+    background-size: cover;
+    justify-content: space-between;
+    box-shadow: 0 0 8px #000;
+  }
+  .main .informacionEnLinea .texto-InformacionEnLinea {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 500px;
+  }
+  .main .informacionEnLinea .texto-InformacionEnLinea h2 {
+    color: #fff;
+    text-transform: uppercase;
+    margin: 20px 5px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+  .main .informacionEnLinea .texto-InformacionEnLinea h3 {
+    display: none;
+  }
+  .main .informacionEnLinea .texto-InformacionEnLinea .nav-informacionEnLinea {
+    position: relative;
+    background: #fff;
+    opacity: 0.6;
+    height: 350px;
+    margin: 10px;
+    margin-top: 30px;
+    align-items: center;
+    flex-direction: column;
+  }
+  .main .informacionEnLinea .texto-InformacionEnLinea .nav-informacionEnLinea .navegador_informacionEnLinea {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .main .informacionEnLinea .texto-InformacionEnLinea .nav-informacionEnLinea .navegador_informacionEnLinea a {
+    opacity: 0.9;
+    color: #000;
+    margin: 15px 0;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 0 5px;
+    text-align: center;
+  }
+  .main .informacionEnLinea .texto-InformacionEnLinea .nav-informacionEnLinea .navegador_informacionEnLinea a:hover {
+    background-color: #181818;
+    color: #fff;
+  }
+  .main .informacionEnLinea .sombraInfo {
+    z-index: 0;
+    content: "";
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    background: #000;
+    opacity: 0.4;
+  }
+  #otoño-sma {
+    background-position: 0px 0px;
+  }
+  #verano-sma {
+    background-position-x: -250px;
+  }
+  .licitaciones-publicas {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .rentas {
+    margin: 5px;
+  }
+}

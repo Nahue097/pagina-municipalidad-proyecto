@@ -1,0 +1,103 @@
+
+
+
+
+.menu-responsive{
+    padding:10px 0 0 0 ;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 65px;
+    overflow-y: hidden;
+    z-index: 5;
+    background-color:none ;
+    transform: translateY(-100%);
+    transition: 0.5s linear all;
+    .menuR{
+        background: #84407b  ;
+        width: 100%;
+        padding: 0;
+       
+    
+       
+
+        .container-submenu{
+            list-style: none;
+            padding-bottom: 6px;
+            padding-top: 6px;
+            border-bottom: solid 1px #fff;
+            text-align: center;
+            .menu__link{
+                display: block;
+                color: #fff;
+                padding: 10px;
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 1.2rem;
+            }
+            
+          
+            .submenu{ 
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                height: 0;
+                overflow: hidden;
+                transition: 0.3s linear all;
+                
+               
+                
+                .menu__link{
+                    display: block;
+                    color: #fff;
+                    padding: 10px;
+                    text-decoration: none;
+                    font-weight: 500;
+                    font-size: 1.1rem;
+                    background-color: #5c0850;
+                    border:solid 3px #84407b;
+                }
+            }
+            .activo{
+                height: auto;
+
+            }
+            
+        }
+        .container-submenu:last-child{
+            border-bottom: none;
+            margin-bottom: 0 ;
+            background: #6b145e;
+            border: solid 5px #84407b;
+        }
+        
+    }
+
+
+
+}
+#licitaciones{
+    border-bottom: none;
+}
+
+.sombra{
+    position: fixed;
+    background-color: rgba(0,0,0, 0.7) ;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+    display: none;
+}
+
+
+.con-navegacion{
+    .menu-responsive{
+        transform: translateX(0);
+    }
+
+    .sombra{
+        display: block;
+    }
+}
